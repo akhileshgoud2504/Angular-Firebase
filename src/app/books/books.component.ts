@@ -12,4 +12,5 @@ export class BooksComponent {
   name2 = "black pouch"
   author2 = 'raghuvaran'
   src2 = "https://m.media-amazon.com/images/I/61exsXR8IxL._SX679_.jpg"
+  isDisabled=false 
 }
