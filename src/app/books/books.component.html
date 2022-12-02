@@ -1,5 +1,5 @@
 <p>Programming Books List!</p>
-<button [disabled]=isDisabled>Show button</button>
+<button (click)="handleClick()" (mouseover)="handleClick()" [disabled]=isDisabled>Show button</button>
 <ul>
     <img [src]=src1 [alt]=name1 width="100" />
     <li>
