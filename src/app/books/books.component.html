@@ -6,12 +6,12 @@
     <!-- <input type="text" [(ngModel)]="Name" /> -->
 <!-- <span>{{Name}}</span> -->
 <ul *ngIf="isShowing">
-    <img [src]=src1 [alt]=name1 width="100" />
-    <li>
-        {{name1}} by {{author1}}
-    </li>
-    <img [src]=src2 [alt]=name2 width="100" />
-    <li>
-        {{name2}} by {{author2}}
-    </li>
+    <ng-container *ngFor="let book of Books; let i=index">
+        <li>
+            {{i+1}}
+            <img [src]=book.image [alt]=book.name width="100" />
+            {{book.name | titlecase}} by {{book.author | titlecase}}
+            {{book.amount | currency:'INR'}}
+        </li>
+    </ng-container>
 </ul>

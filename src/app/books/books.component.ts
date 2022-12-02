@@ -1,17 +1,31 @@
 import { Component } from '@angular/core';
-
+interface Book {
+  name: string,
+  author: string,
+  image: string,
+  amount: number
+}
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent {
-  name1 = 'white pouch'
-  author1 = 'raghuvaran'
-  src1 = "https://m.media-amazon.com/images/I/51bzAAbVPrL._SY879_.jpg"
-  name2 = "black pouch"
-  author2 = 'raghuvaran'
-  src2 = "https://m.media-amazon.com/images/I/61exsXR8IxL._SX679_.jpg"
+
+  Books : Book[]= [
+    {
+      name: 'white pouch',
+      author: 'amazon',
+      image:"https://m.media-amazon.com/images/I/51bzAAbVPrL._SY879_.jpg",
+      amount: 700
+    },
+    {
+      name:  "black pouch",
+      author:  'amazon',
+      image: "https://m.media-amazon.com/images/I/61exsXR8IxL._SX679_.jpg",
+      amount: 1200
+    }
+  ]
   isDisabled=false 
 
   handleClick(){
@@ -19,7 +33,7 @@ export class BooksComponent {
     alert('Hi');
   }
   Name='';
-  isShowing=false;
+  isShowing=true;
   //Not needed because of two way binding
   // handleInput(event:any){
   //   console.log(event)
