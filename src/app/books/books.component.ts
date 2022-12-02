@@ -19,10 +19,14 @@ export class BooksComponent {
     alert('Hi');
   }
   Name='';
-
+  isShowing=false;
   //Not needed because of two way binding
   // handleInput(event:any){
   //   console.log(event)
   //   this.Name=event.target.value;
   // }
+
+  toogleBooks(){
+    this.isShowing = !this.isShowing;
+  }
 }

@@ -1,8 +1,11 @@
 <p>Programming Books List!</p>
-<button (click)="handleClick()" (mouseover)="handleClick()" [disabled]=isDisabled>Show button</button>
-    <input type="text" [(ngModel)]="Name" />
-<span>{{Name}}</span>
-<ul>
+<button (click)="toogleBooks()">
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+</button>
+    <!-- <input type="text" [(ngModel)]="Name" /> -->
+<!-- <span>{{Name}}</span> -->
+<ul *ngIf="isShowing">
     <img [src]=src1 [alt]=name1 width="100" />
     <li>
         {{name1}} by {{author1}}
