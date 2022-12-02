@@ -18,4 +18,11 @@ export class BooksComponent {
     this.isDisabled=true
     alert('Hi');
   }
+  Name='';
+
+  //Not needed because of two way binding
+  // handleInput(event:any){
+  //   console.log(event)
+  //   this.Name=event.target.value;
+  // }
 }
