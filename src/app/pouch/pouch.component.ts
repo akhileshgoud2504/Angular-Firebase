@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from '../types/book';
 
 @Component({
@@ -7,5 +7,11 @@ import { Book } from '../types/book';
   styleUrls: ['./pouch.component.css']
 })
 export class PouchComponent {
-  @Input() book : Book = {} as Book
+  @Input() book : Book = {} as Book;
+  @Output() BookEmitter = new EventEmitter<Book>();
+
+  addToCart(){
+    // console.log(this.book);
+    this.BookEmitter.emit(this.book);
+  }
 }
