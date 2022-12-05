@@ -17,7 +17,7 @@ export class AuthService implements OnInit {
     signInWithEmailAndPassword(auth, form.email,form.password)
       .then((userCredential) => {
         this.isAuthenticated = true;
-        this.router.navigate(['']);
+        this.router.navigate(['dashboard']);
         // Signed in 
         const user = userCredential.user;
         // ...
@@ -36,6 +36,7 @@ export class AuthService implements OnInit {
     createUserWithEmailAndPassword(auth, form.email, form.password)
       .then((userCredential) => {
         this.isAuthenticated = true;
+        this.router.navigate(['login']);
         console.log(userCredential)
       })
       .catch((error) => {
