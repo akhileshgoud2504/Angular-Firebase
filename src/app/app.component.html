@@ -4,10 +4,14 @@
     <div>
         <a routerLink="">Pouch Shop</a>
     </div>
-    <div >
-        <a class="mx-4" routerLink="/register">Register</a>
-        <a class="mx-4" routerLink="/login">Login</a>
-        <a class="mx-4" routerLink="/cart">My Cart</a>
+    <div>
+        <ng-container *ngIf="!isAuthorized()">
+            <a class="mx-4" routerLink="/register">Register</a>
+            <a class="mx-4" routerLink="/login">Login</a>
+        </ng-container>
+        <ng-container *ngIf="isAuthorized()">
+            <a class="mx-4" routerLink="/cart">My Cart</a>
+            </ng-container>
     </div>
 </nav>
 <div class="p-4">

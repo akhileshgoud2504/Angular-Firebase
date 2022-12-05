@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Auth } from 'src/app/types/book';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 })
 export class RegisterComponent {
   ngOnInit(): void {}
-  constructor(){}
+  constructor(private authService : AuthService){}
   form : Auth = {
     email : '',
     password : '',
@@ -19,15 +20,6 @@ export class RegisterComponent {
     if(this.form.password !== this.form.confirmPassword){
       return;
     }
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, this.form.email, this.form.password)
-      .then((userCredential) => {
-        console.log(userCredential)
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
+    this.authService.register(this.form);
   }
 }

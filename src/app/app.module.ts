@@ -5,7 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BooksModule } from "./books/books.module";
 import { CartComponent } from './cart/cart.component';
-import { AuthModule } from "./auth/auth/auth.module";
+import { AuthModule } from "./auth/auth.module";
 @NgModule({
     declarations : [AppComponent, CartComponent],
     imports : [BrowserModule,BooksModule,AppRoutingModule,AuthModule],
