@@ -1,39 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book } from '../types/book';
+import { BooksService } from './books.service';
 
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent {
+export class BooksComponent implements OnInit {
 
-  Books : Book[]= [
-    {
-      name: 'white pouch',
-      author: 'amazon',
-      image:"https://m.media-amazon.com/images/I/51bzAAbVPrL._SY879_.jpg",
-      amount: 700
-    },
-    {
-      name:  "black pouch",
-      author:  'amazon',
-      image: "https://m.media-amazon.com/images/I/61exsXR8IxL._SX679_.jpg",
-      amount: 1200
-    },
-    {
-      name: 'white pouch',
-      author: 'flipkart',
-      image:"https://m.media-amazon.com/images/I/51bzAAbVPrL._SY879_.jpg",
-      amount: 600
-    },
-    {
-      name:  "black pouch",
-      author: 'flipkart',
-      image: "https://m.media-amazon.com/images/I/61exsXR8IxL._SX679_.jpg",
-      amount: 1100
-    }
-  ]
+  constructor (private bookService: BooksService){
+
+  }  
+  
+  Books : Book[]= [];
+  ngOnInit(): void {
+    this.Books = this.bookService.getBooks();
+  }
   isDisabled=false 
 
   handleClick(){
