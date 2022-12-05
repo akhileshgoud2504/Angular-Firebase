@@ -4,3 +4,9 @@ export interface Book {
     image: string,
     amount: number
   }
+
+export interface Auth {
+  email : string,
+  password: string,
+  confirmPassword?:string
+}

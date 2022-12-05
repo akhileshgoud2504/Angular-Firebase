@@ -5,11 +5,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BooksModule } from "./books/books.module";
 import { CartComponent } from './cart/cart.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { LoginComponent } from './auth/login/login.component';
+import { AuthModule } from "./auth/auth/auth.module";
 @NgModule({
     declarations : [AppComponent, CartComponent],
-    imports : [BrowserModule,FormsModule,BooksModule,AppRoutingModule],
+    imports : [BrowserModule,BooksModule,AppRoutingModule,AuthModule],
     bootstrap : [AppComponent]
 })
 
