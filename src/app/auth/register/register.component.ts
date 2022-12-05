@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Auth } from 'src/app/types/book';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,19 @@ export class RegisterComponent {
     password : '',
     confirmPassword: ''
   }
-  submitRegister(){
-    console.log(this.form)
+  submitRegister() {
+    if(this.form.password !== this.form.confirmPassword){
+      return;
+    }
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, this.form.email, this.form.password)
+      .then((userCredential) => {
+        console.log(userCredential)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
   }
 }
