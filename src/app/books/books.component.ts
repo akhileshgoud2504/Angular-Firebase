@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
-interface Book {
-  name: string,
-  author: string,
-  image: string,
-  amount: number
-}
+import { Book } from '../types/book';
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
