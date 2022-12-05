@@ -34,7 +34,7 @@ export class BooksComponent implements OnInit {
   toogleBooks(){
     this.isShowing = !this.isShowing;
   }
-  addToCart(event:any){
-    console.log(event);
-  }
+  // addToCart(event:any){
+  //   console.log(event);
+  // }
 }
