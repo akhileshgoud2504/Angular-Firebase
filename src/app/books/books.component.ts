@@ -51,4 +51,7 @@ export class BooksComponent {
   toogleBooks(){
     this.isShowing = !this.isShowing;
   }
+  addToCart(event:any){
+    console.log(event);
+  }
 }
