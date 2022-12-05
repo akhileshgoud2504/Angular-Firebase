@@ -1,7 +1,7 @@
-<li>
+<li class="box-border h-50 w-100 m-4 border-2 text-center">
     <img [src]=book.image [alt]=book.name width="150" height="150"/>
     <p class="title">{{book.name | titlecase}} by {{book.author | titlecase}}</p>
-    <p class="currency">{{book.amount | currency:'INR'}}</p>
-    <button *ngIf="!inCart" (click)="addToCart()">Add to cart</button>
-    <button *ngIf="inCart" (click)="removeFromCart()">Remove from Cart</button>
+    <p class="currency text-center" >{{book.amount | currency:'INR'}}</p>
+    <button class="currency bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"  *ngIf="!inCart" (click)="addToCart()">Add to cart</button>
+    <button class="currency bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"  *ngIf="inCart" (click)="removeFromCart()">Remove from Cart</button>
 </li>
