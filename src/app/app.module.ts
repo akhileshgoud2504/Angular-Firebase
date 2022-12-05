@@ -5,6 +5,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BooksModule } from "./books/books.module";
 import { CartComponent } from './cart/cart.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 @NgModule({
     declarations : [AppComponent, CartComponent],
     imports : [BrowserModule,FormsModule,BooksModule,AppRoutingModule],
